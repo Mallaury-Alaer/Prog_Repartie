@@ -25,10 +25,11 @@ public class SrvBeg {
 				PrintWriter sortie = new PrintWriter(socket.getOutputStream(), true);
 				phrase = in.readLine();
 				sortie.println(begaiement(phrase));
-				
+				System.out.println("********** DEBUT **********");
 				System.out.println("Infos client : " + socket.getInetAddress()+"/"+port);
 				System.out.println("Nombre de begaiements: " + getNbBeg(phrase));
 				System.out.println("Phrase a transformer: " +getPhrase(phrase));
+				System.out.println("**********  FIN  **********");
 				socket.close();
 				
 			}

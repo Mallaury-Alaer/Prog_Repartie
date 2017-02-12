@@ -14,15 +14,15 @@ public class ClientBeg {
 	Socket socket;
 	public ClientBeg(String host, int port) throws InterruptedException{
 		try {
-			socket = new Socket(InetAddress.getByName(host), port);
-			InputStream in = socket.getInputStream();
-			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-			BufferedReader inServ = new BufferedReader(new InputStreamReader(in));
-			BufferedReader inUser = new BufferedReader(new InputStreamReader(System.in));
-			
 			boolean cont = true;
 			
 			while(cont){
+				socket = new Socket(InetAddress.getByName(host), port);
+				InputStream in = socket.getInputStream();
+				PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+				BufferedReader inServ = new BufferedReader(new InputStreamReader(in));
+				BufferedReader inUser = new BufferedReader(new InputStreamReader(System.in));
+				
 				String phrase = "";
 				System.out.println("Phrase = " + phrase);
 				int beg = 0;
