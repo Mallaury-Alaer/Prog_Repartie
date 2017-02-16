@@ -53,7 +53,7 @@ public class SrvBeg {
 			for(int j = 0; j<nb; j++){
 				if(!mots[i].contains("\n"))
 					if(mots[i].contains(":"))
-						rep += mots[i].substring(2) + " ";
+						rep += mots[i].substring(mots[i].lastIndexOf(':')) + " ";
 					else
 						rep += mots[i] + " ";
 				else

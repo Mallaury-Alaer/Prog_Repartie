@@ -16,7 +16,7 @@ public class ServeurBegaiement {
 		String phrase;
 
 		while (true) {
-			String envoi="0";
+			String envoi="";
 			dgSocket.receive(dgPacket);
 			System.out.println("Datagram received from " + dgPacket.getSocketAddress());
 			
