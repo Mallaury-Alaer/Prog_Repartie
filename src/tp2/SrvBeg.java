@@ -40,24 +40,33 @@ public class SrvBeg {
 	}
 	
 	public String begaiement(String phrase){
-		String[] mots = phrase.split(" ");
+		String[] mots = new String[1];
+		if(phrase.contains(" "))
+			mots = phrase.split(" ");
+		else
+			mots[0] = phrase;
 		int nb = -1;
 		String rep = "";
 		if(phrase.substring(0,1).matches("[0-9]")){
-			 nb = Integer.parseInt(phrase.substring(0,1));
+			 nb = Integer.parseInt(phrase.substring(0,phrase.lastIndexOf(':')));
 			 rep += "0";
 		}else{
-			return "1Erreur nombre \n";
+			return "1:Erreur nombre\n";
 		}
 		for(int i = 0; i<mots.length; i++){
 			for(int j = 0; j<nb; j++){
 				if(!mots[i].contains("\n"))
 					if(mots[i].contains(":"))
-						rep += mots[i].substring(mots[i].lastIndexOf(':')) + " ";
+							rep += mots[i].substring(mots[i].lastIndexOf(':')+1);
+					
 					else
 						rep += mots[i] + " ";
+					
 				else
-					rep += " " + mots[i].substring(0, mots[i].lastIndexOf("\n"));
+					if(mots[i].contains(":"))
+						rep += mots[i].substring(mots[i].lastIndexOf(':')+1, mots[i].lastIndexOf("\n"))+" ";
+					else
+						rep += mots[i].substring(0, mots[i].lastIndexOf('\n')) + " ";
 			}
 		}
 		rep += "\n";
