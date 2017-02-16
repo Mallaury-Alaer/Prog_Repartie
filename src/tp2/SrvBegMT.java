@@ -3,11 +3,11 @@ package tp2;
 import java.io.*;
 import java.net.*;
 
-public class ServiceTCP_MT {
+public class SrvBegMT {
 	public static final int PORT_SERVICE = 9876;
 	private ServerSocket s_Srv;
 
-	ServiceTCP_MT() throws IOException {
+	SrvBegMT() throws IOException {
 		s_Srv = new ServerSocket(PORT_SERVICE);
 	}
 
@@ -22,7 +22,7 @@ public class ServiceTCP_MT {
 
 	// Test d'usage de la classe ... et rien d'autre
 	public static void main(String [] args) throws IOException {
-			ServiceTCP_MT srvTruc = new ServiceTCP_MT();
+			SrvBegMT srvTruc = new SrvBegMT();
 			srvTruc.attenteClient();
 	}
 
