@@ -1,7 +1,6 @@
 package tp2;
 
 import java.io.BufferedReader;
-import java.io.Flushable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
